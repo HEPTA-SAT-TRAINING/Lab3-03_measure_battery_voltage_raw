@@ -19,8 +19,7 @@ void setup() {
 
 void loop() {
   uint16_t raw_voltage = eps.get_battery_voltage_raw();
-  cdh.printf("Raw Battery Voltage(DEC): %d\r\n", raw_voltage);
-  cdh.printf("Raw Battery Voltage(HEX): %X\r\n", raw_voltage);
+  cdh.printf("Raw Battery Voltage: %d\r\n", raw_voltage);
 
   float converted_voltage = raw_voltage * (adc_ref_voltage / adc_max_value) * bat_vol_divider_gain;
   cdh.printf("Converted Battery Voltage: %f V\r\n", converted_voltage);
